@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Speedy Bird</title>
+    <style>
+        body {
+            background-image: url("assetImages/gameBG.jpg");
+        }
+
+        cursor {
+            /* TODO Cursor Shape */
+        }
+
+        /* TODO : BackGround Music  */
+        /* Crash Bash Song */
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            display: inline;
+            float: right;
+            margin-left: 30px;
+            margin-right: 30px;
+            background-color: rgba(40, 38, 38, 0.485);
+            border-radius: 24px;
+            color: white;
+            display: flex;
+            /* TODO How to Center them COrrectly ?  */
+            justify-content: flex-end;
+        }
+
+        img {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <h3 id="playerName">Welcome : Ayman</h3>
+        </li>
+        <li>
+            <h3 id="timeLimit">Time Limit : 1:00</h3>
+        </li>
+        <li>
+            <h3 id="gameScore">Score : 0 </h3>
+        </li>
+        <li>
+            <h3 id="shotBirdsNumber">Birds Killed : 0</h3>
+        </li>
+    </ul>
+    <script src="game.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <style>
+        body {
+            background-image: url("assetImages/index.png");
+        }
+
+        table {
+            text-align: center;
+            margin: auto;
+        }
+
+        td tr h3 h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            height: 90px;
+            width: 90px;
+        }
+
+        #userInput {
+            float: left;
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            background-color: rgba(173, 173, 173, 0.495);
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+
+        #gameInform {
+            float: right;
+            position: absolute;
+            right: 40px;
+            background-color: rgba(173, 173, 173, 0.564);
+            width: 400px;
+            text-align: center;
+            margin: auto;
+        }
+
+        button {
+            padding: 13px;
+            border-radius: 30px;
+            margin: 15px;
+            color: Red;
+            background-color: black;
+        }
+
+        select {
+            font-size: larger;
+            border-radius: 40px;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <audio src="">
+
+    </audio>
+    <div id="userInput">
+        <form action="game.html" method="get">
+            <h2>Select Level : </h2>
+            <select name="" id="">
+                <option value="">Beginner</option>
+                <option value="">Intermediate</option>
+                <option value="">Advanced</option>
+            </select>
+            <h2>Enter your Name : </h2>
+            <input type="text" name="userName" id="" placeholder="Enter your Name">
+            <br><br>
+            <button>Go & Play </button>
+        </form>
+    </div>
+    <br>
+    <div id="gameInform">
+        <h2>Points System :</h2>
+        <table>
+            <tr>
+                <td>
+                    <img src="birds/1.gif">
+                </td>
+                <td>
+                    <h3>+10 Points </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="birds/2.gif">
+                </td>
+                <td>
+                    <h3>+10 Points </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="birds/0.gif">
+                </td>
+                <td>
+                    <h3>-10 Points </h3>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
