@@ -49,9 +49,10 @@ class Bird {
     }
   }
 
-  get birdValue() {
-    return this.#birdValue;
-  }
+  // get birdValue() {
+  //   return this.#birdValue;
+  // }
+  // NO NEED ANYMORE 
 
   get birdImageObject() {
     return this.#imageObj;

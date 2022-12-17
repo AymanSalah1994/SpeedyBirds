@@ -5,12 +5,11 @@ class Player {
     this.userName = userName;
     this.#birdsKilled = 0;
     this.#userScore = 0;
-    
   }
 
-  setScore(shotBirdValue , shotBirdsNumber) {
+  setScore(shotBirdValue, shotBirdsNumber) {
     this.#userScore = shotBirdValue;
-    this.#birdsKilled = shotBirdsNumber ; 
+    this.#birdsKilled = shotBirdsNumber;
   }
 
   showResult() {
