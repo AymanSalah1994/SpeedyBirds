@@ -49,18 +49,13 @@ class Bird {
     }
   }
 
-  // get birdValue() {
-  //   return this.#birdValue;
-  // }
-  // NO NEED ANYMORE 
-
   get birdImageObject() {
     return this.#imageObj;
   }
 
   static destroyAnonBirdImage(imageObject) {
     Bird.shotBirdsCounter += 1;
-    Bird.totalValues +=Number(imageObject.getAttribute("valueOfBird"));
+    Bird.totalValues += Number(imageObject.getAttribute("valueOfBird"));
     imageObject.src = "assetImages/crash.png";
     let timeOutID = setTimeout(() => {
       imageObject.remove();

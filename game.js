@@ -7,10 +7,9 @@ let gamerName = document.getElementById("playerName");
 let gameLimit = document.getElementById("timeLimit");
 let gameScore = document.getElementById("gameScore");
 let shortBirdsCounter = document.getElementById("shotBirdsNumber");
-
-let gamer = new Player("Ali Samy");
-gamerName.innerText = "Welcome: " + gamer.userName;
 let totalTime = 60;
+let gamer = new Player("Ali Samy"); // TODO from url
+gamerName.innerText = "Welcome: " + gamer.userName;
 
 function gameEngineStart() {
   // gameAudio();
@@ -54,8 +53,8 @@ function stopUpdatingScore(id) {
   clearInterval(id);
 }
 
-gameEngineStart(); // Interval 1
-updateGameScores(); // Interval 2
+//gameEngineStart(); // Interval 1
+//updateGameScores(); // Interval 2
 
 // function gameAudio() {
 //   var audio = new Audio();
@@ -76,17 +75,4 @@ updateGameScores(); // Interval 2
 //         });
 //     }
 //   };
-// }
-
-// function sendBombs() {
-//   let bombsNumber = Math.floor(Math.random() * 3);
-//   for (let i = 0; i < bombsNumber; i++) {
-//     // TODO class Bomb ;
-//   }
-//   // let birds = Bird.
-//   console.log(birds.length);
-//   for (let bird of birds) {
-//     console.log(bird.x, bird.y);
-//     bird.birdShot();
-//   }
 // }

@@ -16,7 +16,6 @@ class Bomb {
       for (let eachBird of currentBirds) {
         let xDiff = Math.abs(eachBird.x - this.#imageObject.x);
         let yDiff = Math.abs(eachBird.y - this.#imageObject.y);
-
         if (xDiff < 230 && yDiff < 230) {
           Bird.destroyAnonBirdImage(eachBird);
         }
@@ -25,9 +24,8 @@ class Bomb {
   }
 
   bombShot() {
-    
-    this.#imageObject.style.width = "250px";
-    this.#imageObject.style.height = "250px";
+    this.#imageObject.style.width = "260px";
+    this.#imageObject.style.height = "260px";
     let timerId = setTimeout(() => {
       this.#imageObject.remove();
       clearTimeout(timerId);
