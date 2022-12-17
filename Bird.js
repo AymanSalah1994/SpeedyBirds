@@ -58,9 +58,10 @@ class Bird {
   }
 
   static destroyAnonBirdImage(imageObject) {
+    Bird.shotBirdsCounter += 1;
+    Bird.totalValues +=Number(imageObject.getAttribute("valueOfBird"));
     imageObject.src = "assetImages/crash.png";
     let timeOutID = setTimeout(() => {
-      gamer.setScore(Number(imageObject.getAttribute("valueOfBird")));
       imageObject.remove();
       clearTimeout(timeOutID);
     }, 100);

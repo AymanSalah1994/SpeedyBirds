@@ -1,3 +1,4 @@
+import { Bird } from "./Bird.js";
 class Bomb {
   #imageObject;
   #topOfBomb;
@@ -9,6 +10,31 @@ class Bomb {
     this.#imageObject.style.top = "0px";
     this.#topOfBomb = 0;
     // TODO onClick FOr Bomb Even  ;
+    this.#imageObject.addEventListener("click", () => {
+      let currentBirds = document.querySelectorAll("[valueOfBird]");
+      for (let eachBird of currentBirds) {
+        // For Right
+
+        if (eachBird.x > this.#imageObject.x) {
+          if (
+            eachBird.x - this.#imageObject.x < 150 &&
+            this.#imageObject.y - eachBird.y < 150
+          ) {
+            Bird.destroyAnonBirdImage(eachBird);
+          }
+        }
+
+        // For Left
+        else if (eachBird.x < this.#imageObject.x) {
+          if (
+            this.#imageObject.x - eachBird.x < 150 &&
+            this.#imageObject.y - eachBird.y < 150
+          ) {
+            Bird.destroyAnonBirdImage(eachBird);
+          }
+        }
+      }
+    });
   }
 
   bombHide(id) {

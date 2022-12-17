@@ -31,6 +31,8 @@ function gameEngineStart() {
     let bobo = new Bird();
     body.append(bobo.birdImageObject);
     bobo.birdHide(id);
+
+
   }, 1000);
 }
 
@@ -43,6 +45,7 @@ function updateGameScores() {
   let id = setInterval(() => {
     gamer.setScore(Bird.totalValues, Bird.shotBirdsCounter);
     gameScore.innerText = "Score : " + Bird.totalValues;
+    // TODO make Data updated From user Data 
     shortBirdsCounter.innerText = "Birds killed :" + Bird.shotBirdsCounter;
     if (totalTime == 0) {
       stopUpdatingScore(id);
@@ -55,6 +58,8 @@ function stopUpdatingScore(id) {
 
 gameEngineStart(); // Interval 1 
 updateGameScores(); // Interval 2 
+
+
 // function gameAudio() {
 //   var audio = new Audio();
 //   audio.src = "audio/game.mp3";
