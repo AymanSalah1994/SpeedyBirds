@@ -10,6 +10,7 @@ class Bomb {
     this.#imageObject.style.top = "0px";
     this.#topOfBomb = 0;
     this.#imageObject.addEventListener("click", () => {
+      this.#imageObject.src = "assetImages/bigCrash.png";
       this.bombShot();
       let currentBirds = document.querySelectorAll("[valueOfBird]");
       for (let eachBird of currentBirds) {
@@ -24,9 +25,9 @@ class Bomb {
   }
 
   bombShot() {
-    this.#imageObject.src = "assetImages/bigCrash.png";
-    this.#imageObject.style.width = "300px";
-    this.#imageObject.style.height = "300px";
+    
+    this.#imageObject.style.width = "250px";
+    this.#imageObject.style.height = "250px";
     let timerId = setTimeout(() => {
       this.#imageObject.remove();
       clearTimeout(timerId);

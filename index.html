@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Index | Speedy Birds</title>
     <style>
         body {
             background-image: url("assetImages/index.png");
@@ -48,10 +48,14 @@
             padding: 5px;
         }
 
-        #userName {
+        #playerName {
             margin-top: 20px;
             padding: 10px;
             border-radius: 25px;
+        }
+        .hiddenSpan
+        {
+            display: none;
         }
 
     </style>
@@ -67,9 +71,11 @@
                 <option value="">Advanced</option>
             </select>
             <h2>Enter your Name : </h2>
-            <input type="text" name="userName" id="userName" placeholder="Enter your Name">
+            <input type="text" name="userName" id="playerName" placeholder="Enter your Name">
             <br><br>
-            <button>Go & Play </button>
+            <span style="color: red;" class="hiddenSpan">This Field is Empty</span>
+            <br><br>
+            <button id="enterGame" type="submit">Go & Play </button>
         </form>
     </div>
     <br>
@@ -81,7 +87,7 @@
                     <img src="birds/1.gif">
                 </td>
                 <td>
-                    <h3>+10 Points </h3>
+                    <h2>+10 Points </h2>
                 </td>
             </tr>
             <tr>
@@ -89,7 +95,7 @@
                     <img src="birds/2.gif">
                 </td>
                 <td>
-                    <h3>+10 Points </h3>
+                    <h2>+10 Points </h2>
                 </td>
             </tr>
             <tr>
@@ -97,7 +103,7 @@
                     <img src="birds/0.gif">
                 </td>
                 <td>
-                    <h3>-10 Points </h3>
+                    <h2 style="color: red;">-10 Points </h2>
                 </td>
             </tr>
         </table>
