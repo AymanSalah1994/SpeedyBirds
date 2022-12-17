@@ -11,32 +11,28 @@ class Bomb {
     this.#topOfBomb = 0;
     // TODO onClick FOr Bomb Even  ;
     this.#imageObject.addEventListener("click", () => {
+      this.bombShot();
       let currentBirds = document.querySelectorAll("[valueOfBird]");
       for (let eachBird of currentBirds) {
-        // For Right
+        let xDiff = Math.abs(eachBird.x - this.#imageObject.x);
+        let yDiff = Math.abs(eachBird.y - this.#imageObject.y);
 
-        if (eachBird.x > this.#imageObject.x) {
-          if (
-            eachBird.x - this.#imageObject.x < 150 &&
-            this.#imageObject.y - eachBird.y < 150
-          ) {
-            Bird.destroyAnonBirdImage(eachBird);
-          }
-        }
-
-        // For Left
-        else if (eachBird.x < this.#imageObject.x) {
-          if (
-            this.#imageObject.x - eachBird.x < 150 &&
-            this.#imageObject.y - eachBird.y < 150
-          ) {
-            Bird.destroyAnonBirdImage(eachBird);
-          }
+        if (xDiff < 230 && yDiff < 230) {
+          Bird.destroyAnonBirdImage(eachBird);
         }
       }
     });
   }
 
+  bombShot() {
+    this.#imageObject.src = "assetImages/bigCrash.png";
+    this.#imageObject.style.width = "300px";
+    this.#imageObject.style.height = "300px";
+    let timerId = setTimeout(() => {
+      this.#imageObject.remove();
+      clearTimeout(timerId);
+    }, 100);
+  }
   bombHide(id) {
     if (this.#topOfBomb >= window.innerHeight - this.#imageObject.height) {
       this.#imageObject.remove();
