@@ -9,7 +9,6 @@ class Bomb {
     this.#imageObject.style.left = posX + "px"; // Will Be Random Number
     this.#imageObject.style.top = "0px";
     this.#topOfBomb = 0;
-    // TODO onClick FOr Bomb Even  ;
     this.#imageObject.addEventListener("click", () => {
       this.bombShot();
       let currentBirds = document.querySelectorAll("[valueOfBird]");
@@ -33,6 +32,7 @@ class Bomb {
       clearTimeout(timerId);
     }, 100);
   }
+
   bombHide(id) {
     if (this.#topOfBomb >= window.innerHeight - this.#imageObject.height) {
       this.#imageObject.remove();
