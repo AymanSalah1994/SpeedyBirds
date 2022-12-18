@@ -8,7 +8,10 @@ let gameLimit = document.getElementById("timeLimit");
 let gameScore = document.getElementById("gameScore");
 let shortBirdsCounter = document.getElementById("shotBirdsNumber");
 let totalTime = 60;
-let gamer = new Player("Ali Samy"); // TODO from url
+
+let theUserName = document.location.href.split("=")[1];
+
+let gamer = new Player(theUserName); 
 gamerName.innerText = "Welcome: " + gamer.userName;
 
 function gameEngineStart() {
