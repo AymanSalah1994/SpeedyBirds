@@ -84,3 +84,7 @@ let mainModal = document.querySelector(".modal") ;
 let msg = document.createElement("div") ;
 
 
+class Modal
+{
+  
+}
