@@ -56,23 +56,12 @@ function stopUpdatingScore(id) {
 //gameEngineStart(); // Interval 1
 //updateGameScores(); // Interval 2
 
-// function gameAudio() {
-//   var audio = new Audio();
-//   audio.src = "audio/game.mp3";
-//   // when the sound has been loaded, execute your code
-//   audio.oncanplaythrough = (event) => {
-//     var playedPromise = audio.play();
-//     if (playedPromise) {
-//       playedPromise
-//         .catch((e) => {
-//           console.log(e);
-//           if (e.name === "NotAllowedError" || e.name === "NotSupportedError") {
-//             console.log(e.name);
-//           }
-//         })
-//         .then(() => {
-//           console.log("playing sound !!!");
-//         });
-//     }
-//   };
-// }
+window.addEventListener("load", function () {
+  playIntroSound();
+});
+
+function playIntroSound() {
+  let backGroundAudio = new Audio();
+  backGroundAudio.src = "audio/game.mp3";
+  backGroundAudio.play();
+}
