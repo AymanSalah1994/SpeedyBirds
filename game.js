@@ -1,7 +1,7 @@
 import { Bird } from "./Bird.js";
 import { Player } from "./Player.js";
 import { Bomb } from "./Bomb.js";
-
+import { Modal } from "./Modal.js";
 let body = document.querySelector("body");
 let gamerName = document.getElementById("playerName");
 let gameLimit = document.getElementById("timeLimit");
@@ -55,36 +55,27 @@ function stopUpdatingScore(id) {
   clearInterval(id);
 }
 
-
- 
-
-window.addEventListener("load", function () {
-
-  // 1-Show the Modal For Confirmation 
-  // 2-OK ? Play 
-  // Once GameEngine Finish Call the Message 
-  // If win Dis-Hide Win
-  //  Same For loose 
-  // OK button Always Hide All Of them And Return to the Home 
-
-
-  // playIntroSound();
-  // gameEngineStart(); // Interval 1
-  // updateGameScores(); // Interval 2
-});
-
 function playIntroSound() {
   let backGroundAudio = new Audio();
   backGroundAudio.src = "audio/index.mp3";
   backGroundAudio.play();
 }
 
+let mainModal = document.querySelector(".modal");
+let startTheGame = function () {
+  mainModal.classList.add("modalHidden");
+  playIntroSound();
+  gameEngineStart(); // Interval 1
+  updateGameScores(); // Interval 2
+};
 
-let mainModal = document.querySelector(".modal") ; 
-let msg = document.createElement("div") ;
-
-
-class Modal
-{
-  
-}
+window.addEventListener("load", function () {
+  let modBody = new Modal(
+    "Welcome To the Game , Remeber , Dont Shoot the Yellow Bird ",
+    "modal/welcome.gif",
+    "Start Playing",
+    startTheGame
+  );
+  mainModal.classList.remove("modalHidden");
+  mainModal.append(modBody.modalBody);
+});
