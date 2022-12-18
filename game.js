@@ -15,7 +15,6 @@ let gamer = new Player(theUserName);
 gamerName.innerText = "Welcome: " + gamer.userName;
 
 function gameEngineStart() {
-  // gameAudio();
   let id = setInterval(() => {
     gameLimit.innerText = "0:" + totalTime;
     totalTime -= 1;
@@ -56,11 +55,12 @@ function stopUpdatingScore(id) {
   clearInterval(id);
 }
 
-//gameEngineStart(); // Interval 1
-//updateGameScores(); // Interval 2
 
 window.addEventListener("load", function () {
   playIntroSound();
+  
+gameEngineStart(); // Interval 1
+updateGameScores(); // Interval 2
 });
 
 function playIntroSound() {
