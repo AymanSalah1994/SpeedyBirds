@@ -11,7 +11,7 @@ let totalTime = 60;
 
 let theUserName = document.location.href.split("=")[1];
 
-let gamer = new Player(theUserName); 
+let gamer = new Player(theUserName);
 gamerName.innerText = "Welcome: " + gamer.userName;
 
 function gameEngineStart() {
@@ -56,15 +56,31 @@ function stopUpdatingScore(id) {
 }
 
 
+ 
+
 window.addEventListener("load", function () {
-  playIntroSound();
-  
-gameEngineStart(); // Interval 1
-updateGameScores(); // Interval 2
+
+  // 1-Show the Modal For Confirmation 
+  // 2-OK ? Play 
+  // Once GameEngine Finish Call the Message 
+  // If win Dis-Hide Win
+  //  Same For loose 
+  // OK button Always Hide All Of them And Return to the Home 
+
+
+  // playIntroSound();
+  // gameEngineStart(); // Interval 1
+  // updateGameScores(); // Interval 2
 });
 
 function playIntroSound() {
   let backGroundAudio = new Audio();
-  backGroundAudio.src = "audio/game.mp3";
+  backGroundAudio.src = "audio/index.mp3";
   backGroundAudio.play();
 }
+
+
+let mainModal = document.querySelector(".modal") ; 
+let msg = document.createElement("div") ;
+
+
