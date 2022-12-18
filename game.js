@@ -48,6 +48,7 @@ function updateGameScores() {
     shortBirdsCounter.innerText = "Birds killed :" + Bird.shotBirdsCounter;
     if (totalTime == 0) {
       stopUpdatingScore(id);
+      showPlayerScore();
     }
   }, 100);
 }
@@ -62,6 +63,7 @@ function playIntroSound() {
 }
 
 let mainModal = document.querySelector(".modal");
+
 let startTheGame = function () {
   mainModal.classList.add("modalHidden");
   playIntroSound();
@@ -79,3 +81,29 @@ window.addEventListener("load", function () {
   mainModal.classList.remove("modalHidden");
   mainModal.append(modBody.modalBody);
 });
+
+function showPlayerScore() {
+  let modBody;
+  if (gamer.userScore > 50) {
+    modBody = new Modal(
+      "Congratiolations !! You Made it ",
+      "modal/lose.gif",
+      "Play Again",
+      startTheGame
+    );
+  } else {
+    modBody = new Modal(
+      "Sorry , You Lost the Game :(",
+      "modal/lose.gif",
+      "Play Again",
+      startTheGame
+    );
+  }
+  mainModal.classList.remove("modalHidden");
+  mainModal.append(modBody.modalBody);
+}
+
+
+// TODO :reset Scores and Time
+// TODO : fix the END modal
+

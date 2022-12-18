@@ -12,9 +12,8 @@ class Player {
     this.#birdsKilled = shotBirdsNumber;
   }
 
-  showResult() {
-    // TODO : Show Pop Up after Finishing   ;
-    console.log("Game Ended");
+  get userScore() {
+   return this.#userScore ; 
   }
 } // End Of Player Class
 

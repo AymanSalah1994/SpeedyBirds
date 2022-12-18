@@ -17,7 +17,10 @@ class Modal {
     this.modalBody.append(this.modalImage);
     this.modalBody.append(this.modalButton);
     if (actionExpression) {
-      this.modalButton.addEventListener("click", actionExpression);
+      this.modalButton.addEventListener("click", ()=>{
+        this.modalBody.remove() ; 
+        actionExpression() ;
+      });
     }
   }
 }
