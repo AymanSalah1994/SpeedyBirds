@@ -1,7 +1,17 @@
+let backGroundAudioIndex = new Audio();
+
+window.addEventListener("load", function () {});
+
 let submitBtn = document.getElementById("enterGame");
+let gamerName = document.getElementById("playerName");
+
+gamerName.addEventListener("focus", function () {
+  playIndexSound();
+});
+
 submitBtn.addEventListener("click", function (event) {
   event.preventDefault();
-  let gamerName = document.getElementById("playerName");
+  gamerName = document.getElementById("playerName");
   if (gamerName.value == "") {
     let spanMSG = document.querySelector(".hiddenSpan");
     spanMSG.classList.remove("hiddenSpan");
@@ -11,12 +21,7 @@ submitBtn.addEventListener("click", function (event) {
   }
 });
 
-window.addEventListener("load", function () {
-  playIntroSound();
-});
-
-function playIntroSound() {
-  let backGroundAudio = new Audio();
-  backGroundAudio.src = "audio/index.mp3";
-  backGroundAudio.play();
+function playIndexSound() {
+  backGroundAudioIndex.src = "audio/game.mp3";
+  backGroundAudioIndex.play();
 }
