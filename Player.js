@@ -13,7 +13,11 @@ class Player {
   }
 
   get userScore() {
-   return this.#userScore ; 
+    return this.#userScore;
+  }
+
+  get birdsKilled() {
+    return this.#birdsKilled;
   }
 } // End Of Player Class
 
