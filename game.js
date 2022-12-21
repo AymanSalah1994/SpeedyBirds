@@ -87,7 +87,7 @@ function showPlayerScore() {
   let modBody;
   if (gamer.userScore > 50) {
     modBody = new Modal(
-      "Congratiolations !! You Made it , Your Score is : " + gamer.userScore,
+      "Congratulations !! You Made it , Your Score is : " + gamer.userScore,
       "modal/win.gif",
       "Play Again",
       startTheGame
