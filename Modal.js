@@ -5,7 +5,6 @@ class Modal {
     textForbutton,
     actionExpression = 0
   ) {
-    // TODO Action Continue >> Remove modal and Call ,,Or Back action for form
     this.modalBody = document.createElement("div");
     this.modalImage = document.createElement("img");
     this.modalButton = document.createElement("button");
@@ -17,9 +16,9 @@ class Modal {
     this.modalBody.append(this.modalImage);
     this.modalBody.append(this.modalButton);
     if (actionExpression) {
-      this.modalButton.addEventListener("click", ()=>{
-        this.modalBody.remove() ; 
-        actionExpression() ;
+      this.modalButton.addEventListener("click", () => {
+        this.modalBody.remove();
+        actionExpression();
       });
     }
   }
