@@ -10,7 +10,6 @@ class Bird {
     this.#imageObj.src = imageName;
     this.#imageObj.setAttribute("valueOfBird", this.#birdValue);
     let posY = Math.ceil(Math.random() * 450);
-
     this.#imageObj.style.left = "0px";
     this.#imageObj.style.top = posY + "px";
     this.#leftOfBird = 0;
