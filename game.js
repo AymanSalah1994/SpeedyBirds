@@ -9,9 +9,7 @@ let gameScore = document.getElementById("gameScore");
 let shortBirdsCounter = document.getElementById("shotBirdsNumber");
 let totalTime = 60;
 let backGroundAudio = new Audio();
-
 let theUserName = document.location.href.split("=")[1];
-
 let gamer = new Player(theUserName);
 gamerName.innerText = "Welcome: " + gamer.userName;
 
@@ -45,7 +43,6 @@ function updateGameScores() {
   let id = setInterval(() => {
     gamer.setScore(Bird.totalValues, Bird.shotBirdsCounter);
     gameScore.innerText = "Score : " + Bird.totalValues;
-    // TODO make Data updated From user Data
     shortBirdsCounter.innerText = "Birds killed :" + Bird.shotBirdsCounter;
     if (totalTime == 0) {
       stopUpdatingScore(id);
@@ -84,20 +81,20 @@ window.addEventListener("load", function () {
 
 function showPlayerScore() {
   // Reset the Time  and the Game
-  totalTime = 60; //TODO
+  totalTime = 60;
   Bird.totalValues = 0;
   Bird.shotBirdsCounter = 0;
   let modBody;
-  if (gamer.userScore > 60) {
+  if (gamer.userScore > 50) {
     modBody = new Modal(
-      "Congratiolations !! You Made it ",
+      "Congratiolations !! You Made it , Your Score is : " + gamer.userScore,
       "modal/win.gif",
       "Play Again",
       startTheGame
     );
   } else {
     modBody = new Modal(
-      "Sorry , You Lost the Game :(",
+      "Sorry , You Lost the Game :( , Your Score is " + gamer.userScore,
       "modal/lose.gif",
       "Play Again",
       startTheGame
@@ -106,6 +103,3 @@ function showPlayerScore() {
   mainModal.classList.remove("modalHidden");
   mainModal.append(modBody.modalBody);
 }
-
-// TODO :reset Scores and Time
-// TODO : fix the END modal
