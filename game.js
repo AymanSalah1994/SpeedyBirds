@@ -84,10 +84,10 @@ window.addEventListener("load", function () {
 
 function showPlayerScore() {
   let modBody;
-  if (gamer.userScore > 50) {
+  if (gamer.userScore > 60) {
     modBody = new Modal(
       "Congratiolations !! You Made it ",
-      "modal/lose.gif",
+      "modal/win.gif",
       "Play Again",
       startTheGame
     );
