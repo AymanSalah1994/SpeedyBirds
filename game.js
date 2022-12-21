@@ -8,6 +8,7 @@ let gameLimit = document.getElementById("timeLimit");
 let gameScore = document.getElementById("gameScore");
 let shortBirdsCounter = document.getElementById("shotBirdsNumber");
 let totalTime = 60;
+let backGroundAudio = new Audio();
 
 let theUserName = document.location.href.split("=")[1];
 
@@ -57,7 +58,6 @@ function stopUpdatingScore(id) {
 }
 
 function playIntroSound() {
-  let backGroundAudio = new Audio();
   backGroundAudio.src = "audio/index.mp3";
   backGroundAudio.play();
 }
@@ -83,6 +83,10 @@ window.addEventListener("load", function () {
 });
 
 function showPlayerScore() {
+  // Reset the Time  and the Game
+  totalTime = 60; //TODO
+  Bird.totalValues = 0;
+  Bird.shotBirdsCounter = 0;
   let modBody;
   if (gamer.userScore > 60) {
     modBody = new Modal(
@@ -103,7 +107,5 @@ function showPlayerScore() {
   mainModal.append(modBody.modalBody);
 }
 
-
 // TODO :reset Scores and Time
 // TODO : fix the END modal
-
